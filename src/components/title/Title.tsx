@@ -5,7 +5,7 @@ type Props = { title: string; linkText: { text: string; href: string } };
 
 function Title({ title, linkText }: Props) {
   return (
-    <div className="flex justify-between items-center px-4">
+    <div className="flex justify-between items-center">
       <div className="flex items-center gap-x-3">
         <p className="font-bold md:text-lg text-black text-xs">{title}</p>
         <div className="w-7 h-[1px] bg-black"></div>
