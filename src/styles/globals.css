@@ -10,17 +10,54 @@
 
 @layer base {
   :root {
-    --color-blue: #6246EA;
-    --color-black: #2B2C34;
-    --color-white: #FFFFFE;
-    --color-dark-gray: #9A9494;
-    --color-gray: #C0C0C0;
-    --color-light-gray1: #EFF0F3;
-    --color-light-gray2: #E4E5E9;
+    --color-blue: #6246ea;
+    --color-black: #2b2c34;
+    --color-white: #fffffe;
+    --color-dark-gray: #9a9494;
+    --color-gray: #c0c0c0;
+    --color-light-gray1: #eff0f3;
+    --color-light-gray2: #e4e5e9;
   }
 }
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #EFF0F3;
+  background-color: #eff0f3;
+}
+
+/* Customize the entire scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+  background: var(--color-gray); /* Color of the track */
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: var(--color-blue); /* Color of the thumb */
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue); /* Color of the thumb on hover */
+}
+
+::selection {
+  background: var(--color-black); /* Background color of the selected text */
+  color: var(--color-blue); /* Text color of the selected text */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background: var(--color-black);
+  color: var(--color-blue);
+}
+
+/* For Safari and Chrome */
+::-webkit-selection {
+  background: var(--color-black);
+  color: var(--color-blue);
 }

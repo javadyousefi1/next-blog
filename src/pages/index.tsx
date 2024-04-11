@@ -233,7 +233,8 @@ export default function Home() {
           title="Browse the category"
           linkText={{ text: "see all category", href: "" }}
         />
-        <div className="flex justify-between overflow-x-auto gap-x-4">
+        {/* map on category list */}
+        <div className="flex justify-between overflow-x-auto gap-x-4 pb-2">
           {categoryList.map((category) => (
             <CategoryCard
               key={category.id}
@@ -243,6 +244,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+
       <div className="h-[3000px]"> </div>
     </main>
   );
