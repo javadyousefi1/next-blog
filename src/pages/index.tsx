@@ -31,16 +31,16 @@ export default function Home() {
                   updates
                 </p>
               </div>
-              <div className=" flex gap-x-4">
+              <div className=" flex md:gap-x-4 gap-x-2">
                 <Input
-                  className="max-w-[400px]"
+                  className="md:max-w-[400px]"
                   type="text"
                   name="email"
                   onChange={() => {}}
                   value={""}
                   placeHolder="Enter Your Email"
                 />
-                <Button className="w-[100px]">Subscribe</Button>
+                <Button className="w-[100px] text-xs">Subscribe</Button>
               </div>
             </div>
             {/* iamge */}
