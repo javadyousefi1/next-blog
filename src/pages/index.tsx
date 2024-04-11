@@ -3,10 +3,12 @@ import homeImage from "../assets/images/home.png";
 import Image from "next/image";
 import Input from "@/components/inputs/Input";
 import Button from "@/components/elements/Button";
+import Title from "@/components/title/Title";
 
 export default function Home() {
   return (
     <main className="">
+      {/* main */}
       <section className={`h-[calc(100vh-52px)] w-full`}>
         <div
           className={`${Styles.dotBackground} w-full h-full flex justify-center items-center px-4`}
@@ -16,10 +18,10 @@ export default function Home() {
             <div className="flex flex-col md:gap-y-12 gap-y-8">
               <div className="flex flex-col md:gap-y-2">
                 <h1 className="text-center md:text-left text-3xl md:text-6xl text-black font-black">
-                  Hi, i’m Javad 
+                  Hi, i’m Javad
                 </h1>
                 <h1 className="text-center md:text-left text-3xl md:text-6xl text-black font-black">
-                  Front end dev 
+                  Front end dev
                 </h1>
               </div>
               {/* desc */}
@@ -50,7 +52,33 @@ export default function Home() {
               className="w-[400px]"
             />
           </div>
+          {/* arrow */}
+          <span className="absolute bottom-5 hidden md:block">
+            <svg
+              width="21 "
+              height="21  "
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 9L12 17L20 9"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
         </div>
+      </section>
+
+      {/* Browse the category */}
+      <section className="max-w-7xl container mt-10">
+        <Title
+          title="Browse the category"
+          linkText={{ text: "see all category", href: "" }}
+        />
       </section>
       <div className="h-[3000px]"> </div>
     </main>
