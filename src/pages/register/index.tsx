@@ -25,7 +25,6 @@ const Register = () => {
 
   const onSubmit = (data: RegisterFormType) => {
     setIsLoading(true);
-    console.log(data);
     axios
       .post("/api/register", data)
       .then((res) => {
@@ -33,7 +32,7 @@ const Register = () => {
         router.push("/");
       })
       .catch((err) => {
-        toast.error(err?.message);
+        toast.error(err?.response?.data?.message);
         setIsLoading(false);
       });
   };

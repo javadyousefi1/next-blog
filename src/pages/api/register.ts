@@ -4,7 +4,7 @@ import { MongoClient } from 'mongodb';
 
 type ResponseData = {
     message: string;
-    data?: any  
+    data?: any
 };
 
 const mongoUri = 'mongodb://admin:xHFrwVqZyiwkn4THS93f@remote-asiatech.runflare.com:32515/admin';
@@ -22,6 +22,14 @@ export default async function handler(
         const client = await MongoClient.connect(mongoUri);
         const db = client.db(dbName);
         const collection = db.collection(collectionName);
+
+        const alreadyAvaliable = await collection.countDocuments({ email: data.email });
+
+        if (alreadyAvaliable !== 0) {
+            res.status(400).json({ message: "this email already exists" });
+            return
+        }
+
         const result = await collection.insertOne(data);
 
         if (result.insertedId) {
