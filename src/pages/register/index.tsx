@@ -24,8 +24,6 @@ const Register = () => {
   });
 
   const onSubmit = (data: RegisterFormType) => {
-    toast.success("You registered succsesfully 🥳", { duration: 3000 });
-    return;
     setIsLoading(true);
     console.log(data);
     axios
