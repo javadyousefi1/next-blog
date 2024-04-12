@@ -1,11 +1,15 @@
 import Link from "next/link";
 import React from "react";
 
-type Props = { title: string; linkText: { text: string; href: string } };
+type Props = {
+  title: string;
+  linkText: { text: string; href: string };
+  className?: string;
+};
 
-function Title({ title, linkText }: Props) {
+function Title({ title, linkText, className }: Props) {
   return (
-    <div className="flex justify-between items-center">
+    <div className={`flex justify-between items-center ${className}`}>
       <div className="flex items-center gap-x-3">
         <p className="font-bold md:text-lg text-black text-xs">{title}</p>
         <div className="w-7 h-[1px] bg-black"></div>

@@ -1,10 +1,12 @@
 import Styles from "../styles/style.module.css";
 import homeImage from "../assets/images/home.png";
+import email from "../assets/images/email.png";
 import Image from "next/image";
 import Input from "@/components/inputs/Input";
 import Button from "@/components/elements/Button";
 import Title from "@/components/title/Title";
 import CategoryCard from "@/components/category/CategoryCard";
+import BlogCard from "@/components/blog/BlogCard";
 
 export default function Home() {
   const categoryList = [
@@ -196,7 +198,9 @@ export default function Home() {
                   value={""}
                   placeHolder="Enter Your Email"
                 />
-                <Button className="!w-[80px] font-semibold text-xs md:text-md">Subscribe</Button>
+                <Button className="!w-[80px] font-semibold text-xs md:text-md">
+                  Subscribe
+                </Button>
               </div>
             </div>
             {/* iamge */}
@@ -226,7 +230,6 @@ export default function Home() {
           </span>
         </div>
       </section>
-
       {/* Browse the category */}
       <section className="max-w-7xl container mt-10 px-4">
         <Title
@@ -244,7 +247,62 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* article */}
+      <article className="bg-white w-full mt-20 py-20 ">
+        {/* Featured Article */}
+        <div className="max-w-7xl container px-4">
+          <Title
+            title="Featured Article"
+            linkText={{ text: "See All Article", href: "" }}
+          />
+          <div className="flex justify-between overflow-x-auto gap-x-4 pb-2 mt-8">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
+        {/* css */}
+        <div className="max-w-7xl container px-4 mt-20">
+          <Title title="Css" linkText={{ text: "See All Article", href: "" }} />
+          <div className="flex justify-between overflow-x-auto gap-x-4 pb-2 mt-8">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
+        {/* Javascript */}
+        <div className="max-w-7xl container px-4 mt-20">
+          <Title
+            title="Javascript"
+            linkText={{ text: "See All Article", href: "" }}
+          />
+          <div className="flex justify-between overflow-x-auto gap-x-4 pb-2 mt-8">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <Button className="!w-max mt-16 !p-3">More Articles</Button>
+        </div>
+      </article>
+      {/* email */}
 
+      <section>
+        <div className="flex flex-col justify-center items-center py-10 px-4 ">
+          {/* icon */}
+          <Image
+            src={email}
+            alt="Picture of the author"
+            className="w-[130px]"
+          />
+          <h1 className="text-3xl font-bold text-black whitespace-nowrap mt-5">Subscribe For the lastest updates</h1>
+          <p className="text-lg font-light mt-1 text-gray whitespace-nowrap">Subscribe to newsletter and never miss the new post every week.</p>
+        </div>
+      </section>
 
       <div className="h-[3000px]"> </div>
     </main>

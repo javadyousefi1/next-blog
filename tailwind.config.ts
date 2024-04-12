@@ -20,6 +20,9 @@ const config: Config = {
         "ligth-gray1": "var(--color-ligth-gray1)",
         "ligth-gray2": "var(--color-ligth-gray2)",
       },
+      boxShadow: {
+        'custom-shadow': '0 0 10px #e9dddded',
+      },
     },
   },
   plugins: [],
