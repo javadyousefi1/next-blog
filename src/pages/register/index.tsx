@@ -24,23 +24,26 @@ const Register = () => {
   });
 
   const onSubmit = (data: RegisterFormType) => {
+    const loading = toast.loading("loading...");
     setIsLoading(true);
     axios
       .post("/api/register", data)
       .then((res) => {
-        toast.success("You registered succsesfully 🥳");
+        toast.dismiss(loading);
+        toast.success("You registered succsesfully 🥳", { duration: 3000 });
         router.push("/");
       })
       .catch((err) => {
+        toast.dismiss(loading);
         toast.error(err?.response?.data?.message);
         setIsLoading(false);
       });
   };
   return (
     <div
-      className={`${Styles.dotBackground} w-full flex justify-center items-center`}
+      className={`${Styles.dotBackground}  w-full flex justify-center items-center`}
     >
-      <div className="bg-ligth-gray1 w-[400px] my-10 rounded-lg p-10 flex-col">
+      <div className=" w-[400px] my-10 rounded-lg p-10 flex-col bg-ligth-gray1">
         <h1 className="text-blue font-bold text-3xl text-center mb-8">
           Register
         </h1>
