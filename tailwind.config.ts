@@ -17,8 +17,8 @@ const config: Config = {
         "black": "var(--color-black)",
         "dark-gray": "var(--color-dark-gray)",
         "gray": "var(--color-gray)",
-        "ligth-gray1": "var(--color-ligth-gray1)",
-        "ligth-gray2": "var(--color-ligth-gray2)",
+        "ligth-gray1": "var(--color-light-gray1)",
+        "ligth-gray2": "var(--color-light-gray2)",
       },
       boxShadow: {
         'custom-shadow': '0 0 10px #e9dddded',
@@ -26,5 +26,5 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+}; 
 export default config;

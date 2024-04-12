@@ -290,21 +290,36 @@ export default function Home() {
         </div>
       </article>
       {/* email */}
-
       <section>
-        <div className="flex flex-col justify-center items-center py-10 px-4 ">
+        <div className="flex flex-col justify-center items-center py-10 px-4 bg-ligth-gray1">
           {/* icon */}
           <Image
             src={email}
             alt="Picture of the author"
             className="w-[130px]"
           />
-          <h1 className="text-3xl font-bold text-black whitespace-nowrap mt-5">Subscribe For the lastest updates</h1>
-          <p className="text-lg font-light mt-1 text-gray whitespace-nowrap">Subscribe to newsletter and never miss the new post every week.</p>
+          <h1 className="md:text-3xl font-bold text-black whitespace-nowrap mt-5">
+            Subscribe For the lastest updates
+          </h1>
+          <p className="md:text-lg font-light mt-1 text-gray md:whitespace-nowrap text-center">
+            Subscribe to newsletter and never miss the new post every week.
+          </p>
+          <div className="flex  md:gap-x-4 gap-x-2 w-full max-w-[500px] mt-8 px-4">
+            <Input
+              className=""
+              type="text"
+              name="email"
+              onChange={() => {}}
+              value={""}
+              placeHolder="Enter Your Email"
+            />
+            <Button className="!w-[80px] font-semibold text-xs md:text-md">
+              Subscribe
+            </Button>
+          </div>
         </div>
       </section>
 
-      <div className="h-[3000px]"> </div>
     </main>
   );
 }
