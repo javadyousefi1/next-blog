@@ -4,6 +4,7 @@ import { MongoClient } from 'mongodb';
 
 type ResponseData = {
     message: string;
+    data?: any  
 };
 
 const mongoUri = 'mongodb://admin:xHFrwVqZyiwkn4THS93f@remote-asiatech.runflare.com:32515/admin';
@@ -23,10 +24,8 @@ export default async function handler(
         const collection = db.collection(collectionName);
         const result = await collection.insertOne(data);
 
-        console.log("result", result)
-
         if (result.insertedId) {
-            res.status(200).json({ message: "user register succsesfully" });
+            res.status(200).json({ message: "user register succsesfully", data: { ...data, _id: result.insertedId } });
         } else {
             res.status(400).json({ message: "fail to insert db" });
         }

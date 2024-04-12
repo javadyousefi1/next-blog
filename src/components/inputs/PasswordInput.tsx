@@ -28,11 +28,11 @@ const PasswordInput: React.FC<PasswordInputPropType> = ({ onChange, name, placeH
 
     const handleTogglePasswordVisibility = () => setIsPasswordVisible(prev => !prev)
 
-    const inputStyle = `w-full px-3 py-2.5 text-xs border outline-none border-neutral-700 placeholder-neutral-700 transition linear duration-150 ${className} ${error ? "border-red-400 bg-red-50" : "border-neutral-700"}`
+    const inputStyle = `w-full px-3 py-4 border-none text-xs border outline-none rounded-lg  transition linear duration-150 ${className} ${error ? "border-red-400 bg-red-50" : "border-neutral-700"}`
 
     return (<div className="relative">
         <input placeholder={placeHolder} value={value} type={isPasswordVisible ? "text" : "password"} onChange={onChange} name={name} className={inputStyle} disabled={disabled} />
-        <button type="button" className="absolute right-3 top-[18px]" onClick={handleTogglePasswordVisibility}>
+        <button type="button" className="absolute right-3 top-[22px]" onClick={handleTogglePasswordVisibility}>
             {isPasswordVisible ? hideIcon : showIcon}
         </button>
     </div>);
