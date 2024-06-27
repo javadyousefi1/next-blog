@@ -1,14 +1,23 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Toaster } from "react-hot-toast";
+import { useRouter } from "next/router";
+import { AdminLayout } from "./AdminLayout";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const router = useRouter();
+  const isAdmin = router.pathname.startsWith("/admin");
+
   return (
-    <div className="md:mt-[71px] mt-[38px]">
-      <Toaster />
-      <Header />
-      {children}
-      <Footer />
+    <div className={isAdmin ? "" : "md:mt-[71px] mt-[38px]"}>
+      {isAdmin ? (
+        <AdminLayout>iiygv</AdminLayout>
+      ) : (
+        <>
+          <Header />
+          {children}
+          <Footer />
+        </>
+      )}
     </div>
   );
 };
